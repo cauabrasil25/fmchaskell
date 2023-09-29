@@ -33,9 +33,9 @@ doub :: Nat -> Nat
 doub O = O
 doub n = mul n n 
 
-fat :: Nat -> Nat
-fat O = (S O)
-fat (S n) = mul (S n) (fat n)
+fact :: Nat -> Nat
+fact O = (S O)
+fact (S n) = mul (S n) (fact n)
 
 fib :: Nat -> Nat
 fib O = O

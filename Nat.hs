@@ -1,5 +1,5 @@
 module Nat where
-import Prelude hiding (min,max,add,mul)
+import Prelude hiding (min,max,add,mul,exp)
 
 data Nat = O | S Nat
     deriving ( Eq , Show )
@@ -23,3 +23,8 @@ mul :: Nat -> Nat -> Nat
 mul n O = O
 mul n (S O) = n 
 mul n (S m) = (add n (mul n m))
+
+exp :: Nat -> Nat -> Nat
+exp n O = (S O)
+exp O n = O
+exp n (S m) = mul n (exp n m)

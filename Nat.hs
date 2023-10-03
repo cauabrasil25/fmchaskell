@@ -1,6 +1,6 @@
 module Nat where
 import Prelude hiding (min,max,add,mul,exp,doub,fat,fib,pred,if_then_else_,
-    leq,ev,od)
+    leq,ev,od,isMul3)
 
 data Nat = O | S Nat
     deriving ( Eq , Show )
@@ -67,3 +67,7 @@ od O = False
 od (S O) = True
 od (S (S n)) = od n
 
+isMul3 :: Nat -> Bool 
+isMul3 (S (S (S n))) = isMul3 n
+isMul3 O = True 
+isMul3 _ = False

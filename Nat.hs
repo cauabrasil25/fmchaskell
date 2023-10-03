@@ -1,5 +1,6 @@
 module Nat where
-import Prelude hiding (min,max,add,mul,exp,doub,fat,fib,pred,if_then_else_,leq,ev)
+import Prelude hiding (min,max,add,mul,exp,doub,fat,fib,pred,if_then_else_,
+    leq,ev,od)
 
 data Nat = O | S Nat
     deriving ( Eq , Show )
@@ -60,4 +61,9 @@ ev :: Nat -> Bool
 ev O = True
 ev (S O) = False 
 ev (S (S n)) = ev n
+
+od :: Nat -> Bool
+od O = False
+od (S O) = True
+od (S (S n)) = od n
 

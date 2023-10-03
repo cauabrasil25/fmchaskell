@@ -45,3 +45,8 @@ fib (S (S n)) = add (fib (S n)) (fib n)
 pred :: Nat -> Nat
 pred O = O
 pred (S n) = n
+
+--bool
+if_then_else_ :: Bool -> Nat -> Nat -> Nat 
+if_then_else_ True n _ = n 
+if_then_else_ False _ n = n 

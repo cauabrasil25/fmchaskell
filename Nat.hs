@@ -1,5 +1,5 @@
 module Nat where
-import Prelude hiding (min,max,add,mul,exp,doub,fat,fib,pred,if_then_else_,
+import Prelude hiding (min,max,sum,mul,exp,doub,fat,fib,pred,if_then_else_,
     leq,ev,od,isMul3,isZero)
 
 data Nat = O | S Nat
@@ -15,15 +15,15 @@ max n O = n
 max O n = n
 max (S n) (S m) = S (max n m)
 
-add :: Nat -> Nat -> Nat
-add n O = n 
-add O n = n 
-add n (S m) = S (add n m)
+sum :: Nat -> Nat -> Nat
+sum n O = n 
+sum O n = n 
+sum n (S m) = S (sum n m)
 
 mul :: Nat -> Nat -> Nat
 mul n O = O
 mul n (S O) = n 
-mul n (S m) = (add n (mul n m))
+mul n (S m) = (sum n (mul n m))
 
 exp :: Nat -> Nat -> Nat
 exp n O = (S O)
@@ -41,7 +41,7 @@ fact (S n) = mul (S n) (fact n)
 fib :: Nat -> Nat
 fib O = O
 fib (S O) = S O
-fib (S (S n)) = add (fib (S n)) (fib n)
+fib (S (S n)) = sum (fib (S n)) (fib n)
 
 pred :: Nat -> Nat
 pred O = O

@@ -1,6 +1,6 @@
 module Nat where
 import Prelude hiding (min,max,sum,mul,exp,doub,fat,fib,pred,if_then_else_,minus,div,
-    leq,ev,od,isMul3,isZero)
+    quot,rem,leq,ev,od,isMul3,isZero)
 
 data Nat = O | S Nat
     deriving ( Eq , Show )
@@ -54,6 +54,12 @@ minus n (S m) = pred (minus n m)
 div :: Nat -> Nat -> (Nat , Nat)
 div n m = if (leq n m) then (O, n) else (S n', m')
  where (n', m') = div (minus n m) m
+
+quot :: Nat -> Nat -> Nat
+quot n m = fst(div n m)
+
+rem :: Nat -> Nat -> Nat
+rem n m = snd(div n m)
 
 --bool
 if_then_else_ :: Bool -> Nat -> Nat -> Nat 
